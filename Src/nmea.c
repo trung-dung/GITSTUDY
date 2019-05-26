@@ -89,20 +89,7 @@ void nmea_parse_gpgga(char *nmea, gpgga_t *loc)
     p = strchr(p, ',')+1;
     loc->altitude = atof(p);
 
-	DEBUG_D("\nLat: %f, lon: %f\n", loc->latitude, loc->longitude );
-
-//cap nhat thong tin
-//    gpsinfo.utc.hour = hh;
-//	gpsinfo.utc.min = mm;
-//	gpsinfo.utc.sec = ss;
-//    gpsinfo.sig = loc->quality;
-//	gpsinfo.latitude = loc->latitude;
-//    gpsinfo.lat = loc->lat;        
-//	gpsinfo.longitude = loc->longitude; 
-//    gpsinfo.lon = loc->lon;        
-//    gpsinfo.elv = loc->altitude; 
-//	gpsinfo.sat_inuse = loc->satellites;      
- 
+	DEBUG_D("\nLat: %f, lon: %f\n", loc->latitude, loc->longitude ); 
 }
 
 void nmea_parse_gprmc(char *nmea, gprmc_t *loc)
@@ -176,21 +163,7 @@ void nmea_parse_gprmc(char *nmea, gprmc_t *loc)
 	DEBUG_D("UTC date (GPRMC): %.0f %02d-%02d-%02d\r\n",time,day,mon,year);
     if(year < 90)
         year += 100;
-    mon -= 1;
-//cap nhat thong tin
-//    gpsinfo.utc.hour = hh;
-//	gpsinfo.utc.min = mm;
-//	gpsinfo.utc.sec = ss;
-//    gpsinfo.utc.day = day;
-//	gpsinfo.utc.mon = mon;
-//	gpsinfo.utc.year = year;
-//	gpsinfo.latitude = loc->latitude;
-//    gpsinfo.lat = loc->lat;        
-//	gpsinfo.longitude = loc->longitude; 
-//    gpsinfo.lon = loc->lon;        
-   
-//    gpsinfo.speed = loc->speed;      
-//    gpsinfo.direction = loc->course;  
+    mon -= 1;  
 	DEBUG_D("\nLat: %f, lon: %f\n", loc->latitude, loc->longitude );
 }
 
